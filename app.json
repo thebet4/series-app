@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "seriesApp",
-    "slug": "seriesApp",
+    "slug": "series-app",
     "version": "1.0.0",
+    "owner": "thebet4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -24,10 +25,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.thebet4.seriesapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f99cef1b-08ae-41df-b9f2-fac8fae764b9"
+      }
     }
   }
 }
