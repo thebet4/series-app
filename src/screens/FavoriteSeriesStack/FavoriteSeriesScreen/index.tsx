@@ -1,5 +1,6 @@
 import { FavoriteSeriesStackNavigatorParamsList } from '@Navigation/types'
 import SeriesList from '@components/organisms/SeriesList'
+import { useIsFocused } from '@react-navigation/native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { useFavoriteSeriesStore } from '@store/useFavoriteSeriesStore'
 import { GetSeriesResponse } from '@utils/interfaces/series'
@@ -13,6 +14,7 @@ const FavoriteSeriesScreen = ({
 }: NativeStackScreenProps<FavoriteSeriesStackNavigatorParamsList, 'FavoriteSeriesScreen'>) => {
   const { favoriteSeries } = useFavoriteSeriesStore()
   const [favoriteSeriesList, setFavoriteSeriesList] = React.useState<GetSeriesResponse[]>([])
+  const isFocused = useIsFocused()
 
   React.useEffect(() => {
     const orderedSeries = favoriteSeries.sort((a, b) => a.seriesName.localeCompare(b.seriesName))
@@ -35,7 +37,7 @@ const FavoriteSeriesScreen = ({
       })
     })
     setFavoriteSeriesList(formattedSeries)
-  }, [favoriteSeries])
+  }, [isFocused])
 
   const handleSelectSerie = (serieId: string) => {
     const serie = favoriteSeries.find((item) => {
