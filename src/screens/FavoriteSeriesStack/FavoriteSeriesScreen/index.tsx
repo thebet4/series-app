@@ -43,18 +43,15 @@ const FavoriteSeriesScreen = ({
     })
 
     if (serie) {
-      navigation.navigate('SeriesStackNavigator', {
-        screen: 'SeriesDetailsScreen',
-        params: {
-          seriesId: serieId,
-          image: serie.image,
-          seriesName: serie.seriesName,
-          summary: serie.summary,
-          average: serie.average,
-          genres: serie.genres,
-          scheduler: serie.scheduler,
-          status: serie?.status
-        }
+      navigation.navigate('SeriesDetailsScreen', {
+        seriesId: serieId,
+        image: serie.image,
+        seriesName: serie.seriesName,
+        summary: serie.summary,
+        average: serie.average,
+        genres: serie.genres,
+        scheduler: serie.scheduler,
+        status: serie?.status
       })
     }
   }

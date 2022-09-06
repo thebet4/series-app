@@ -37,5 +37,17 @@ export type SeriesStackNavigatorParamsList = {
 
 export type FavoriteSeriesStackNavigatorParamsList = {
   FavoriteSeriesScreen: undefined
-  SeriesStackNavigator: NavigatorScreenParams<SeriesStackNavigatorParamsList>
+  SeriesDetailsScreen: {
+    seriesId: string
+    seriesName: string
+    image?: string
+    summary: string
+    genres: string[]
+    average: string
+    scheduler?: {
+      time?: string
+      days?: string[]
+    }
+    status: string
+  }
 }
